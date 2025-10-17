@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <script src="script.js" defer></script>
 </head>
 <body>
 
@@ -22,7 +21,7 @@
                 <li><a href="#videos">Videos</a></li>
                 <li><a href="#virtual-tour">Virtual Tour</a></li>
                 <li><a href="#legacy">Legacy</a></li>
-                <li><a href="#minecraft-museum">Minecraft Museum</a></li>
+                <li><a href="about.html">About Us</a></li>
             </ul>
         </nav>
     </header>
@@ -159,35 +158,14 @@
             </div>
         </section>
 
-
+        <!-- THIS SECTION HAS BEEN REPLACED -->
         <section id="virtual-tour" class="content-section">
-            <h2>A 'Street View' of the Minecraft Museum</h2>
-            <div id="tour-container">
-                <div id="panorama-container">
-                    <img id="panorama-image" src="" alt="Museum Exhibit View">
-                    
-                    <div id="loader">
-                         <div class="spinner"></div>
-                    </div>
-
-                    <div id="nav-controls">
-                        <div id="nav-left" class="nav-arrow hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg>
-                        </div>
-                         <div id="nav-forward" class="nav-arrow hidden">
-                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18" /></svg>
-                        </div>
-                        <div id="nav-back" class="nav-arrow hidden">
-                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0-7.5-7.5M12 21V3" /></svg>
-                        </div>
-                        <div id="nav-right" class="nav-arrow hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0-7.5 7.5M21 12H3" /></svg>
-                        </div>
-                    </div>
-                </div>
-                <div id="info-box">
-                    <h3 id="info-title"></h3>
-                    <p id="info-description"></p>
+            <h2>A 360° View of the Minecraft Museum</h2>
+            <div id="tour-container-360">
+                <div id="viewer-container"></div>
+                <div id="info-box-360">
+                    <h3 id="info-title-360"></h3>
+                    <p id="info-description-360"></p>
                 </div>
             </div>
         </section>
@@ -221,9 +199,17 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 Virtual Museum of Magdalena Gamayo. A project for G-HUMA003 ART APPRECIATION by BCS23.</p>
+        <div class="footer-content">
+            <a href="about.html" class="btn">About The Team</a>
+            <p>&copy; 2024 Virtual Museum of Magdalena Gamayo. A project for G-HUMA003 ART APPRECIATION by BCS23.</p>
+        </div>
     </footer>
-
+    
+    <!-- Panolens.js and its dependency three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/105/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/panolens@0.11.0/build/panolens.min.js"></script>
+    <!-- Your custom script, which now uses Panolens -->
+    <script src="script.js"></script>
 </body>
 </html>
 
