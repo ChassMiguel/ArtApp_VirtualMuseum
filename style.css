@@ -188,10 +188,19 @@ table th {
     font-family: var(--header-font);
 }
 
+/* --- NEW STYLE FOR TABLE SUBHEADERS --- */
+.table-subheader td {
+    background-color: var(--accent-color);
+    color: var(--dark-text);
+    font-family: var(--header-font);
+    font-weight: 700;
+    text-align: center;
+}
+
 table tr:nth-child(even) {
     background-color: #fff;
 }
-table tr:hover {
+table tr:hover:not(.table-subheader) {
     background-color: #FDFBF5;
 }
 
@@ -310,50 +319,11 @@ table tr:hover {
     color: var(--primary-color);
 }
 
-/* --- VIRTUAL TOUR STYLES --- */
-#tour-container {
-    background: var(--light-text);
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    box-shadow: 0 4px 0 #bbb;
-    overflow: hidden;
+/* --- VIRTUAL TOUR (YOUTUBE VIDEO) STYLES --- */
+#virtual-tour .video-container {
+    max-width: 100%; /* Allows it to take up the full container width */
+    margin: 0 auto; /* Center it */
 }
-
-#panorama-container {
-    position: relative;
-    width: 100%;
-    background-color: #e0e0e0;
-    aspect-ratio: 16 / 9;
-}
-#panorama-image {
-    width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.5s ease-in-out;
-}
-#loader {
-    position: absolute; inset: 0; background: rgba(255, 255, 255, 0.8); display: flex;
-    justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s ease; pointer-events: none; z-index: 10;
-}
-#loader.loader-active { opacity: 1; pointer-events: all; }
-.spinner {
-    border: 5px solid rgba(0, 0, 0, 0.1); width: 50px; height: 50px; border-radius: 50%;
-    border-left-color: var(--primary-color); animation: spin 1s ease infinite;
-}
-@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-#nav-controls { position: absolute; inset: 0; z-index: 5; }
-.nav-arrow {
-    position: absolute; width: 50px; height: 50px; color: var(--light-text); background-color: rgba(60, 42, 33, 0.7);
-    border-radius: 4px; display: flex; justify-content: center; align-items: center; cursor: pointer;
-    transition: all 0.2s ease-in-out; border-bottom: 3px solid rgba(0,0,0,0.3);
-}
-.nav-arrow:hover { transform: scale(1.1); background-color: rgba(60, 42, 33, 1); border-bottom-width: 2px; margin-top: 1px;}
-.nav-arrow svg { width: 28px; height: 28px; }
-.nav-arrow.hidden { display: none !important; }
-#nav-left { top: 50%; left: 1rem; transform: translateY(-50%); }
-#nav-right { top: 50%; right: 1rem; transform: translateY(-50%); }
-#nav-forward { top: 1rem; left: 50%; transform: translateX(-50%); }
-#nav-back { bottom: 1rem; left: 50%; transform: translateX(-50%); }
-#info-box { padding: 2rem; background-color: #fff; border-top: 1px solid #eee; }
-#info-box p { margin-bottom: 0; }
-
 
 /* --- Minecraft Museum Section --- */
 .minecraft-section {
@@ -431,8 +401,7 @@ footer {
     gap: 1rem;
 }
 
-/* --- NEW & IMPROVED ABOUT US PAGE STYLES --- */
-
+/* --- ABOUT US PAGE STYLES --- */
 .about-page-background {
     background-color: var(--light-bg);
     background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d3cdbf' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
@@ -522,33 +491,6 @@ footer {
     margin: 0;
 }
 
-/* --- VIRTUAL TOUR STYLES (REPLACED) --- */
-#tour-container-360 {
-    background: var(--light-text);
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    box-shadow: 0 4px 0 #bbb;
-    overflow: hidden;
-}
-
-#viewer-container {
-    width: 100%;
-    height: 60vh; /* Adjust height as needed */
-    max-height: 700px;
-}
-
-#info-box-360 { 
-    padding: 2rem; 
-    background-color: #fff; 
-    border-top: 1px solid #eee; 
-}
-#info-box-360 h3 {
-    margin: 0 0 0.5rem 0;
-}
-#info-box-360 p { 
-    margin-bottom: 0; 
-}
-
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
     h1 { font-size: 2.5rem; }
@@ -557,8 +499,6 @@ footer {
     .content-section { padding: 3rem 1rem; }
     .minecraft-content { flex-direction: column; }
     .minecraft-content img, .minecraft-text { width: 100%; }
-    .nav-arrow { width: 40px; height: 40px; }
-    .nav-arrow svg { width: 24px; height: 24px; }
     .video-grid { grid-template-columns: 1fr; }
     .about-hero h1 { font-size: 2.5rem; }
 }
